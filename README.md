@@ -1,103 +1,79 @@
 # ⚡ Prompt Engineering Lab: Guia Prático com Gemini & Streamlit
 
-> **Um laboratório prático e interativo construído para demonstrar visualmente como técnicas de Engenharia de Prompts impactam a precisão e a estrutura das respostas de Modelos de Linguagem (LLMs).**
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://prompt-engineering-lab-mzfgjsfjj84rg8deo6khze.streamlit.app/)
+
+> **Um laboratório prático, visual e interativo para entender como diferentes técnicas de Engenharia de Prompts moldam as respostas de Modelos de Linguagem (LLMs) usando o Google Gemini.**
+
+ **Acesse a aplicação online:** [Prompt Engineering Lab na Nuvem](https://prompt-engineering-lab-mzfgjsfjj84rg8deo6khze.streamlit.app/)
 
 ---
 
 ##  Sobre o Projeto
 
-Este repositório foi desenvolvido como parte de uma iniciativa do **Google Student Ambassadors (Embaixadores Estudantis do Google)**. 
+Este repositório foi criado no âmbito do programa **Google Student Ambassadors (Embaixadores Estudantis do Google)**.
 
-O objetivo principal deste projeto é traduzir os conceitos teóricos do guia oficial [What is Prompt Engineering? — Google Cloud](https://cloud.google.com/discover/what-is-prompt-engineering?hl=pt-BR) em uma **experiência prática, interativa e altamente aplicável**.
+A proposta principal é **desmistificar a Engenharia de Prompts** para iniciantes e estudantes de tecnologia. Em vez de focar apenas em teoria, este projeto traduz o guia oficial do Google Cloud ([What is Prompt Engineering?](https://cloud.google.com/discover/what-is-prompt-engineering?hl=pt-BR)) em um ambiente prático de experimentação visual.
 
-Em vez de apenas ler sobre técnicas de engenharia de prompts, este laboratório permite que estudantes, desenvolvedores e entusiastas de IA **testem e comparem no mundo real** como diferentes estruturas de instruções afetam a qualidade das respostas geradas pelo **Google Gemini**.
+###  O que é Engenharia de Prompts (de forma simples)?
+Se a Inteligência Artificial Generativa é como um profissional altamente qualificado, a **Engenharia de Prompts** é a arte de dar as **instruções corretas, no formato certo e com o contexto adequado** para que essa IA entregue exatamente o que você precisa, sem "adivinhar" ou gerar respostas vagas.
 
 ---
 
 ##  O Caso Prático: Análise de Incidentes de TI
 
-Para tornar o aprendizado concreto, o laboratório simula um cenário real do dia a dia do mercado corporativo: **Análise e Classificação Automática de Logs de Erro de TI**.
+Para demonstrar a evolução das respostas da IA, a aplicação utiliza um cenário do mundo real: **Triagem Automática de Logs de Erro de Sistema**.
 
-O usuário pode alternar entre três níveis de maturidade de prompts sobre o mesmo log de erro:
+O usuário pode alternar entre três níveis de maturidade de instrução para o mesmo erro:
 
-| Técnica | Abordagem | Resultado Esperado |
-| :--- | :--- | :--- |
-| **1. Zero-Shot** | Instrução direta e simples sem exemplos prévios. | Resposta genérica em texto corrido, variando em formato e profundidade. |
-| **2. Few-Shot** | Instrução combinada com exemplos práticos (entrada/saída). | Resposta padronizada segundo os exemplos fornecidos, reduzindo ambiguidades. |
-| **3. Chain-of-Thought (CoT)** | Raciocínio guiado passo a passo com restrição de formato JSON. | Resposta altamente estruturada, com análise lógica das etapas e pronta para integração via API. |
-
----
-
-##  Funcionalidades da Aplicação
-
-1. ** Comparador de Técnicas:** Compare em tempo real como o Gemini reage a estratégias de Zero-Shot, Few-Shot e Chain-of-Thought.
-2. ** Cheat Sheet (Google Cloud):** Resumo visual dos 5 pilares fundamentais da Engenharia de Prompts segundo a documentação do Google Cloud.
-3. ** Gerador de Prompts Estruturados:** Ferramenta interativa que ajuda o usuário a montar um prompt completo (Persona + Tarefa + Contexto + Formato de Saída).
+| Técnica | O que ela faz? | Analogia do Dia a Dia | Resultado no Gemini |
+| :--- | :--- | :--- | :--- |
+| **1. Zero-Shot** | Pede uma solução direta sem exemplos ou formato obrigatório. | Pedir a um cozinheiro: *"Faça um almoço"*. | Resposta genérica em texto corrido, detalhada porém não padronizada. |
+| **2. Few-Shot** | Fornece 1 ou mais exemplos de entrada e resposta esperada. | Mostrar ao cozinheiro a foto de 2 pratos montados antes de pedir o seu. | Resposta padronizada e previsível, seguindo o padrão dos exemplos. |
+| **3. Chain-of-Thought (CoT)** | Força a IA a raciocinar em etapas lógicas e responder em JSON. | Pedir ao cozinheiro que anote a receita passo a passo e entregue a ficha técnica. | Análise profunda do incidente com saída estruturada pronta para automação/APIs. |
 
 ---
 
-##  Tecnologias Utilizadas
+##  O que você encontra na Aplicação
 
-* **[Streamlit](https://streamlit.io/):** Framework em Python para construção rápida da interface web interativa.
-* **[Google Gemini API (`google-generativeai`)](https://ai.google.dev/):** Modelo de linguagem avançado do Google utilizado para o processamento e execução dos prompts.
-* **Python 3.10+**
-
----
-
-##  Como Executar o Projeto Localmente
-
-### Pré-requisitos
-* Python 3.10 ou superior instalado.
-* Uma chave de API gratuita obtida no **[Google AI Studio](https://aistudio.google.com)**.
-
-### Passo a Passo
-
-1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
-   ```
-
-2. **Crie e ative um ambiente virtual (opcional, mas recomendado):**
-   ```bash
-   python -m venv venv
-   # No Windows:
-   venv\Scripts\activate
-   # No Linux/Mac:
-   source venv/bin/activate
-   ```
-
-3. **Instale as dependências:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Execute a aplicação Streamlit:**
-   ```bash
-   streamlit run app.py
-   ```
-
-5. **Acesse no navegador:**
-   Abra `http://localhost:8501`, insira sua Gemini API Key na barra lateral e comece a testar!
+1. ** Comparador de Técnicas (Aba 1):** Veja lado a lado o prompt enviado, a explicação teórica da técnica e a resposta gerada pelo modelo `gemini-2.5-flash`.
+2. ** Cheat Sheet - Google Cloud (Aba 2):** Os 5 pilares essenciais de um bom prompt (Persona, Contexto, Instrução Imperativa, Formato de Saída e Exemplos).
+3. ** Gerador Estruturado de Prompts (Aba 3):** Um formulário interativo para você montar seu próprio prompt profissional preenchendo apenas 4 campos simples.
 
 ---
 
-##  Estrutura do Repositório
+##  Como Usar a Aplicação
 
-```text
-├── app.py              # Código principal da aplicação Streamlit
-├── requirements.txt    # Dependências do projeto (streamlit, google-generativeai)
-└── README.md           # Documentação do projeto
-```
+Você pode usar o app de **duas formas**:
 
----
-
-##  Aprendizados & Conclusões
-
-Através deste laboratório, fica evidente que **a Engenharia de Prompts não é apenas sobre "saber fazer perguntas", mas sim sobre arquitetar o contexto, delimitar formatos e direcionar o raciocínio da IA**. 
-
-Dominar essas técnicas permite transformar respostas genéricas em saídas determinísticas e estruturadas, prontas para alimentar pipelines automatizados em ambientes de produção.
+### Opção A: Acessar Diretamente pelo Navegador (Sem Instalar Nada)
+1. Acesse o link oficial: [prompt-engineering-lab.streamlit.app](https://prompt-engineering-lab-mzfgjsfjj84rg8deo6khze.streamlit.app/)
+2. Obtenha uma chave de API gratuita no [Google AI Studio](https://aistudio.google.com).
+3. Na barra lateral (Sidebar) à esquerda do app, cole sua chave no campo **"Insira sua Gemini API Key"**.
+4. Escolha uma das abas no topo da tela e comece a interagir!
 
 ---
 
- *Desenvolvido como parte do programa de Embaixadores Estudantis do Google com base na documentação oficial do Google Cloud: https://cloud.google.com/discover/what-is-prompt-engineering?hl=pt-BR .*
+### Opção B: Executar Localmente na sua Máquina
+
+#### Pré-requisitos
+* **Python 3.10+** instalado no seu computador.
+* Chave de API do [Google AI Studio](https://aistudio.google.com).
+
+#### Passo a Passo
+```bash
+# 1. Clone este repositório
+git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
+cd seu-repositorio
+
+# 2. Crie e ative um ambiente virtual
+python -m venv venv
+# No Windows:
+venv\Scripts\activate
+# No Linux/Mac:
+source venv/bin/activate
+
+# 3. Instale as dependências
+pip install -r requirements.txt
+
+# 4. Inicie a aplicação
+streamlit run app.py
