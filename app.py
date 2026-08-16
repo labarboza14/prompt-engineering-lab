@@ -14,7 +14,7 @@ st.caption("Demonstração prática baseada no Guia Oficial de Engenharia de Pro
 
 # Barra Lateral - Configuração
 st.sidebar.header(" Configuração")
-api_key = st.sidebar.text_input(api_key = st.sidebar.text_input("Insira sua Gemini API Key:", type="password"):", type="password")
+api_key = st.sidebar.text_input("Insira sua Gemini API Key:", type="password")
 st.sidebar.markdown("[Obtenha uma chave gratuita no Google AI Studio](https://aistudio.google.com)")
 
 # Log de exemplo para os testes de TI
