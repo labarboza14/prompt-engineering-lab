@@ -54,8 +54,7 @@ O usuário pode alternar entre três níveis de maturidade de prompts sobre o me
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
+  git clone https://github.com/labarboza14/prompt-engineering-lab.git
    ```
 
 2. **Crie e ative um ambiente virtual (opcional, mas recomendado):**
